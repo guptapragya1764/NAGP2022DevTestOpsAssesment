@@ -13,18 +13,13 @@ public class NewSeleniumTest {
 
   @Test()
   public void amazonTest() {
-    WebDriverManager.chromedriver().setup();
+System.setProperty("webdriver.chrome.driver",
+        System.getProperty("user.dir") + "/chromedriver.exe");
     driver = new ChromeDriver();
     driver.get("https://www.amazon.in/");
     driver.findElement(By.id("twotabsearchtextbox")).sendKeys("phone");
     driver.findElement(By.id("nav-search-submit-button")).click();
     String text = driver.findElement(By.xpath("//*[@class='sg-col-inner']/div/span[3]")).getText();
-    Assert.assertEquals(text,"phone");
-  }
-
-
-  @Test()
-  public void googleTest() {
-
+    Assert.assertEquals(text, "phone");
   }
 }
