@@ -21,10 +21,4 @@ public class NewSeleniumTest {
     String text = driver.findElement(By.xpath("//*[@class='sg-col-inner']/div/span[3]")).getText();
     Assert.assertEquals(text,"phone");
   }
-
-
-  @Test()
-  public void googleTest() {
-
-  }
 }
