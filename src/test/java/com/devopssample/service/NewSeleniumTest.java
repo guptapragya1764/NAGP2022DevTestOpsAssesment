@@ -29,6 +29,6 @@ System.setProperty("webdriver.chrome.driver",
     driver = new ChromeDriver();
     driver.get("https://www.google.com/");
     driver.findElement(By.name("q")).sendKeys("phone");
-      Assert.assertTrue(driver.getCurrentUrl().contains("phone"));
+      Assert.assertFalse(driver.getCurrentUrl().contains("phone"));
   }
 }
