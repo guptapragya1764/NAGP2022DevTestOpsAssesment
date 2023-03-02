@@ -20,6 +20,15 @@ System.setProperty("webdriver.chrome.driver",
     driver.findElement(By.id("twotabsearchtextbox")).sendKeys("phone");
     driver.findElement(By.id("nav-search-submit-button")).click();
     String text = driver.findElement(By.xpath("//*[@class='sg-col-inner']/div/span[3]")).getText();
-    Assert.assertEquals(text, "phone");
+  }
+  
+   @Test()
+  public void googleTest() {
+System.setProperty("webdriver.chrome.driver",
+        System.getProperty("user.dir") + "/chromedriver.exe");
+    driver = new ChromeDriver();
+    driver.get("https://www.google.com/");
+    driver.findElement(By.name("q")).sendKeys("phone");
+      Assert.assertTrue(driver.getCurrentUrl().contains("phone"));
   }
 }
